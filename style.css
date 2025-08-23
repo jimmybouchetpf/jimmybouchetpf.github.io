@@ -30,10 +30,10 @@ main{
 .center{
   position:relative;
   width:min(920px, 92vw);
-  height:560px; /* un peu de marge pour éviter chevauchements */
+  height:560px;
 }
 
-/* Photo centrale (temporaire: SVG transparent) */
+/* Photo centrale */
 .photo{
   position:absolute;
   top:50%; left:50%;
@@ -47,8 +47,8 @@ main{
   z-index:2;
 }
 .photo img{
-  width:84%;
-  height:auto;
+  width:auto;
+  height:84%;
   display:block;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
 }
@@ -64,8 +64,8 @@ main{
   z-index:3;
 }
 .logos img{
-  width:34px;
-  height:34px;
+  height:34px;    /* fixe la hauteur */
+  width:auto;     /* conserve les proportions */
   display:block;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
   opacity:.95;
@@ -79,7 +79,7 @@ main{
 /* ====== Rayons + labels ====== */
 .line{
   position:absolute;
-  height:0;             /* ligne horizontale */
+  height:0;
   z-index:1;
 }
 .line::before{
@@ -104,7 +104,7 @@ main{
 }
 .line a:hover{ transform: translate(var(--tx,0), -50%) scale(1.12); }
 
-/* Côté gauche: s'étend vers la gauche depuis le centre; label à GAUCHE du rayon */
+/* Côté gauche */
 .left{
   right:50%;
   width:var(--line);
@@ -115,7 +115,7 @@ main{
   --tx: -105%;
 }
 
-/* Côté droit: s'étend vers la droite depuis le centre; label à DROITE du rayon */
+/* Côté droit */
 .right{
   left:50%;
   width:var(--line);
@@ -126,11 +126,11 @@ main{
   --tx: 105%;
 }
 
-/* Positions verticales (ajuste librement ces % si besoin) */
+/* Positions verticales */
 .l1{ top:14%; } .l2{ top:30%; } .l3{ top:56%; } .l4{ top:74%; }
 .r1{ top:18%; } .r2{ top:36%; } .r3{ top:60%; } .r4{ top:78%; }
 
-/* ====== Pied (barre contact alignée) ====== */
+/* ====== Pied (barre contact) ====== */
 footer{
   text-align:center;
   padding: .8rem 0 1rem;
@@ -159,10 +159,7 @@ footer{
   .center{ height:540px; }
   .photo{ width:100px; height:100px; }
   .logos{ top:9%; }
+  .logos img{ height:28px; }
   .line a{ font-size:.95rem; }
 }
-@media (max-width: 420px){
-  :root{ --line: 38vw; }
-  .center{ height:560px; }
-  .line a{ font-size:.9rem; }
-}
+@media (max-wi
