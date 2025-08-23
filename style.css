@@ -73,11 +73,12 @@ main {
   font-size: 1.1rem;
 }
 
-/* Positionnement des lignes gauche */
+/* Positionnement des lignes gauche (texte avant la ligne) */
 .left {
-  justify-content: flex-end;
+  justify-content: flex-start;
+  flex-direction: row-reverse; /* inverse l'ordre : texte avant ligne */
 }
-.left::before {
+.left::after {
   content: '';
   display: block;
   width: 150px;
@@ -90,7 +91,7 @@ main {
 .l3 { top: 55%; left: 0; }
 .l4 { top: 75%; left: 0; }
 
-/* Positionnement des lignes droite */
+/* Positionnement des lignes droite (texte après la ligne) */
 .right {
   justify-content: flex-start;
 }
@@ -98,22 +99,4 @@ main {
   content: '';
   display: block;
   width: 150px;
-  height: 2px;
-  background: white;
-  margin-left: 0.5rem;
-}
-.r1 { top: 15%; right: 0; }
-.r2 { top: 30%; right: 0; }
-.r3 { top: 55%; right: 0; }
-.r4 { top: 75%; right: 0; }
-
-/* Pied de page */
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-}
-footer a {
-  color: white;
-  text-decoration: underline;
-}
+  height: 2p
