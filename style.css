@@ -35,8 +35,8 @@ main{
 
 /* Photo centrale (cercle) */
 .photo {
-  width: 500px; /* plus grand qu'avant (ex: 130px) */
-  height: 500px;
+  width: 1000px; /* plus grand qu'avant (ex: 130px) */
+  height: 1000px;
   border-radius: 50%;
   border: 0px solid #fff;
   position: absolute;
