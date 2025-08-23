@@ -47,6 +47,7 @@ main{
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  z-index: 10; /* ajoute ou augmente cette valeur */
 }
 
 .photo img {
