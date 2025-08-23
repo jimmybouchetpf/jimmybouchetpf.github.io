@@ -136,6 +136,8 @@ main{
 
 /* Pied */
 footer{
+  position: relative; /* indispensable pour que z-index fonctionne */
+  z-index: 20;        /* plus grand que la photo (qui est à 10) */
   text-align:center;
   padding: .8rem 0 1rem;
   font-size: .95rem;
