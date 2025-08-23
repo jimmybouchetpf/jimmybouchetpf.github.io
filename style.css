@@ -1,6 +1,6 @@
 /* ====== Fond & base ====== */
 :root{
-  --line: clamp(130px, 22vw, 240px); /* longueur des rayons */
+  --line: clamp(130px, 22vw, 240px);
 }
 *{box-sizing:border-box}
 body{
@@ -30,33 +30,32 @@ main{
 .center{
   position:relative;
   width:min(920px, 92vw);
-  height:560px; /* marge pour éviter chevauchements */
+  height:560px;
 }
 
-/* Photo centrale (cercle) */
-.photo {
-  width: 1000px; /* plus grand qu'avant (ex: 130px) */
-  height: 1000px;
-  border-radius: 50%;
-  border: 0px solid #fff;
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 10; /* ajoute ou augmente cette valeur */
+/* Photo centrale */
+.photo{
+  position:absolute;
+  top:50%; left:50%;
+  width:200px; height:200px;
+  border-radius:50%;
+  border:2px solid #fff;
+  background: transparent;
+  transform:translate(-50%, -50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  z-index:10;
+  pointer-events:none; /* IMPORTANT: la photo ne bloque pas les clics */
+}
+.photo img{
+  width:auto;
+  height:90%;
+  display:block;
 }
 
-.photo img {
-  width: auto;
-  height: 90%; /* occupe presque tout le cercle */
-  display: block;
-}
-
-/* ====== Rangée de logos (en haut à droite) ====== */
+/* Logos en haut à droite */
 .logos{
   position:absolute;
   top:6%;
@@ -67,8 +66,8 @@ main{
   z-index:3;
 }
 .logos img{
-  height:68px;   /* x2 (était 34px) */
-  width:auto;    /* conserve les proportions */
+  height:68px;
+  width:auto;
   display:block;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
   opacity:.95;
@@ -79,11 +78,11 @@ main{
   opacity:1;
 }
 
-/* ====== Rayons + labels ====== */
+/* Lignes + labels */
 .line{
   position:absolute;
   height:0;
-  z-index:1;
+  z-index:5; /* sous la photo mais cliquable */
 }
 .line::before{
   content:"";
@@ -105,9 +104,11 @@ main{
   transition: transform .18s ease, filter .18s ease;
   white-space:nowrap;
 }
-.line a:hover{ transform: translate(var(--tx,0), -50%) scale(1.12); }
+.line a:hover{
+  transform: translate(var(--tx,0), -50%) scale(1.12);
+}
 
-/* Côté gauche (vers la gauche depuis le centre; label à GAUCHE du rayon) */
+/* Côté gauche */
 .left{
   right:50%;
   width:var(--line);
@@ -118,7 +119,7 @@ main{
   --tx: -105%;
 }
 
-/* Côté droit (vers la droite depuis le centre; label à DROITE du rayon) */
+/* Côté droit */
 .right{
   left:50%;
   width:var(--line);
@@ -133,10 +134,8 @@ main{
 .l1{ top:14%; } .l2{ top:30%; } .l3{ top:56%; } .l4{ top:74%; }
 .r1{ top:18%; } .r2{ top:36%; } .r3{ top:60%; } .r4{ top:78%; }
 
-/* ====== Pied (barre contact alignée) ====== */
+/* Pied */
 footer{
-  position: relative; /* important pour que z-index fonctionne */
-  z-index: 20;
   text-align:center;
   padding: .8rem 0 1rem;
   font-size: .95rem;
@@ -157,14 +156,14 @@ footer{
 .contact-bar a:hover{ filter: brightness(1.08); }
 .sep{ opacity:.7 }
 
-/* ====== Responsive ====== */
+/* Responsive */
 @media (max-width: 700px){
   :root{ --line: 34vw; }
   header h1{ font-size:2.1rem; }
   .center{ height:560px; }
-  .photo{ width:100px; height:100px; }
+  .photo{ width:150px; height:150px; }
   .logos{ top:9%; }
-  .logos img{ height:48px; }  /* taille adaptée sur mobile */
+  .logos img{ height:48px; }
   .line a{ font-size:.95rem; }
 }
 @media (max-width: 420px){
