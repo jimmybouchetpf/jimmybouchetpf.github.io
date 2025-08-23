@@ -135,6 +135,8 @@ main{
 
 /* ====== Pied (barre contact alignée) ====== */
 footer{
+  position: relative; /* important pour que z-index fonctionne */
+  z-index: 20;
   text-align:center;
   padding: .8rem 0 1rem;
   font-size: .95rem;
