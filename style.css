@@ -37,9 +37,9 @@ main{
 .photo{
   position:absolute;
   top:65%; left:50%;
-  width:900px; height:900px;
+  width:1000px; height:1000px;
   border-radius:50%;
-  border:2px solid #fff;
+  border:0px solid #fff;
   background: transparent;
   transform:translate(-50%, -50%);
   display:flex;
