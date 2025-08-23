@@ -59,7 +59,7 @@ main{
 .logos{
   position:absolute;
   top:6%;
-  right:0;
+  right:10;
   display:flex;
   gap:14px;
   align-items:center;
@@ -74,6 +74,29 @@ main{
   transition: transform .15s ease, opacity .15s ease;
 }
 .logos img:hover{
+  transform: scale(1.08);
+  opacity:1;
+}
+
+/* Logos en haut à gauche */
+.logos2{
+  position:absolute;
+  top:6%;
+  left:10;
+  display:flex;
+  gap:14px;
+  align-items:center;
+  z-index:3;
+}
+.logos2 img{
+  height: 90px; /* au lieu de 68px */
+  width:auto;
+  display:block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  opacity:.95;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.logos2 img:hover{
   transform: scale(1.08);
   opacity:1;
 }
