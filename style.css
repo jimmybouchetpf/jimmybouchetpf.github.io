@@ -1,140 +1,27 @@
-/* ----- Fond et base ----- */
-:root{
-  --line: clamp(130px, 22vw, 240px); /* longueur des rayons */
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: system-ui, sans-serif;
-  color:#fff;
-  background: linear-gradient(to right, #000 0%, #ff7f00 100%);
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-/* ----- En-tête en haut ----- */
-header{ text-align:center; margin-top:2rem; }
-header h1{ margin:0; font-size:2.6rem; }
-header h2{ margin:.4rem 0 0; font-size:1.5rem; font-weight:600; }
-header h3{ margin:.2rem 0 1.2rem; font-size:1.2rem; font-weight:400; }
-
-/* ----- Zone centrale ----- */
-main{
-  flex:1;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.center{
-  position:relative;
-  width:min(920px, 92vw);
-  height:520px;
-}
-
-/* Photo centrale (remplace par une vraie image plus tard) */
-.photo{
+/* Rangée de logos (en haut à droite, au-dessus des projets droite) */
+.logos{
   position:absolute;
-  top:50%; left:50%;
-  width:130px; height:130px;
-  border-radius:50%;
-  border:2px solid #fff;
-  background: rgba(255,255,255,.18);
-  transform:translate(-50%, -50%);
-  z-index:2;
-}
-
-/* ----- Rayons + labels ----- */
-.line{
-  position:absolute;
-  height:0;             /* on trace uniquement une ligne horizontale */
-  z-index:1;
-}
-
-/* Ligne visuelle (horizontale) qui remplit toute la largeur du rayon */
-.line::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0; right:0;
-  height:2px;
-  background:#fff;
-  transform: translateY(-50%); /* centre verticalement la ligne */
-}
-
-/* Le label cliquable au bout du rayon */
-.line a{
-  position:absolute;
-  top:0;
-  text-decoration:none;
-  color:#fff;
-  font-size:1rem;
-  line-height:1;
-  padding:.25rem .4rem;
-  transition: transform .18s ease, filter .18s ease;
-  white-space:nowrap;
-}
-
-/* ----- Côté gauche : le conteneur s'étend vers la gauche depuis le centre ----- */
-.left{
-  right:50%;            /* le bord droit touche le centre */
-  width:var(--line);    /* s'étend vers la gauche */
-}
-/* label placé à GAUCHE du bout de ligne (donc à l'extérieur) */
-.left a{
-  left:0;
-  transform: translate(-105%, -50%);      /* dehors, à gauche */
-}
-.left a:hover{
-  transform: translate(-105%, -50%) scale(1.12);
-}
-
-/* ----- Côté droit : le conteneur s'étend vers la droite depuis le centre ----- */
-.right{
-  left:50%;             /* le bord gauche touche le centre */
-  width:var(--line);    /* s'étend vers la droite */
-}
-/* label placé à DROITE du bout de ligne (donc à l'extérieur) */
-.right a{
+  top:6%;
   right:0;
-  transform: translate(105%, -50%);       /* dehors, à droite */
+  display:flex;
+  gap:14px;
+  align-items:center;
+  z-index:3;            /* passer au-dessus des lignes si besoin */
 }
-.right a:hover{
-  transform: translate(105%, -50%) scale(1.12);
+.logos img{
+  width:34px;
+  height:34px;
+  display:block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  opacity:.95;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.logos img:hover{
+  transform: scale(1.08);
+  opacity:1;
 }
 
-/* ----- Positions verticales des rayons ----- */
-/* Gauche */
-.l1{ top:14%; }
-.l2{ top:30%; }
-.l3{ top:56%; }
-.l4{ top:74%; }
-/* Droite (réparties différemment pour éviter tout chevauchement) */
-.r1{ top:18%; }
-.r2{ top:36%; }
-.r3{ top:60%; }
-.r4{ top:78%; }
-
-/* ----- Pied de page ----- */
-footer{
-  text-align:center;
-  padding:1rem 0 1.4rem;
-  font-size:.95rem;
-}
-footer a{ color:#fff; text-decoration:underline; }
-
-/* ----- Ajustements mobiles ----- */
+/* Si les logos chevauchent r1/r2, baisse un peu la rangée: */
 @media (max-width: 700px){
-  :root{ --line: 34vw; }
-  header h1{ font-size:2.1rem; }
-  .center{ height:480px; }
-  .photo{ width:100px; height:100px; }
-  .line a{ font-size:.95rem; }
+  .logos{ top:9%; }
 }
-@media (max-width: 420px){
-  :root{ --line: 38vw; }
-  .center{ height:520px; }
-  .line a{ font-size:.9rem; }
-}
-
