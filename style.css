@@ -22,6 +22,7 @@ header h3{ margin:.2rem 0 1.2rem; font-size:1.2rem; font-weight:400; }
 
 /* ====== Zone centrale ====== */
 main{
+  position: relative; /* important pour position:absolute des logos */
   flex:1;
   display:flex;
   justify-content:center;
@@ -59,7 +60,7 @@ main{
 .logos{
   position:absolute;
   top:6%;
-  right:10;
+  right:10px;
   display:flex;
   gap:14px;
   align-items:center;
@@ -82,7 +83,7 @@ main{
 .logos2{
   position:absolute;
   top:6%;
-  left:10;
+  left:10px;
   display:flex;
   gap:14px;
   align-items:center;
