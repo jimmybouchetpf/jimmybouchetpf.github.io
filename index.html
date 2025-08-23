@@ -1,66 +1,42 @@
 <!-- index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mon Portfolio – Prénom Nom</title>
-  <meta name="description" content="Portfolio de projets – développeur·se web. HTML/CSS, JavaScript, et plus." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Jimmy Bouchet</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="container nav">
-      <a href="#" class="brand" aria-label="Accueil">
-        <span class="logo" aria-hidden="true"></span>
-        <span>Prénom Nom</span>
-      </a>
-      <nav aria-label="Navigation principale">
-        <ul>
-          <li><a href="#projets">Projets</a></li>
-          <li><a href="#a-propos">À propos</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>Jimmy BOUCHET</h1>
+    <h2>Ingénieur généraliste</h2>
+    <h3>Génie Industriel</h3>
   </header>
 
-  <main class="container">
-    <!-- Contenu identique : sections hero, projets, à propos, contact -->
-    <!-- ... (même structure que précédemment) ... -->
+  <main>
+    <div class="center">
+      <!-- Photo (à ajouter plus tard) -->
+      <div class="photo"></div>
+
+      <!-- Lignes vers la gauche -->
+      <div class="line left l1"><a href="#projet1">Projet 1</a></div>
+      <div class="line left l2"><a href="#projet2">Projet 2</a></div>
+      <div class="line left l3"><a href="#projet3">Projet 3</a></div>
+      <div class="line left l4"><a href="#projet4">Projet 4</a></div>
+
+      <!-- Lignes vers la droite -->
+      <div class="line right r1"><a href="#projet5">Projet 5</a></div>
+      <div class="line right r2"><a href="#projet6">Projet 6</a></div>
+      <div class="line right r3"><a href="#projet7">Projet 7</a></div>
+      <div class="line right r4"><a href="#projet8">Projet 8</a></div>
+    </div>
   </main>
 
-  <footer class="container">
-    © <span id="year"></span> Prénom Nom — Tous droits réservés.
+  <footer>
+    <p>mail : <a href="mailto:jimmy.bouchet.pro@gmail.com">jimmy.bouchet.pro@gmail.com</a></p>
+    <p>tél : 06 71 64 XX XX</p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
 
-
-/* style.css */
-:root{
-  --bg: #0f1221;
-  --card: #15193a;
-  --text: #e8eaf6;
-  --muted: #b7bee5;
-  --acc: #8aa2ff;
-  --acc-2: #6cf0e6;
-  --ring: rgba(138,162,255,.45);
-  --shadow: 0 10px 25px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.25);
-  --radius: 20px;
-  --pad: 1rem;
-  --max: 1120px;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, #25306f 0, transparent 60%),
-                     radial-gradient(1200px 800px at 110% 10%, #1b5b6e 0, transparent 60%),
-                     var(--bg);
-}
-/* ... tout le CSS du modèle précédent, inchangé ... */
