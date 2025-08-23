@@ -35,12 +35,12 @@ main{
 
 /* Photo centrale (cercle) */
 .photo {
-  width: 800px; /* plus grand qu'avant (ex: 130px) */
-  height: 800px;
+  width: 900px; /* plus grand qu'avant (ex: 130px) */
+  height: 900px;
   border-radius: 50%;
   border: 0px solid #fff;
   position: absolute;
-  top: 60%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
