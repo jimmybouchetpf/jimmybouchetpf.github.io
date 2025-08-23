@@ -1,4 +1,59 @@
-/* Rangée de logos (en haut à droite, au-dessus des projets droite) */
+/* ====== Fond & base ====== */
+:root{
+  --line: clamp(130px, 22vw, 240px); /* longueur des rayons */
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Noto Sans", Arial, sans-serif;
+  color:#fff;
+  background: linear-gradient(to right, #000 0%, #ff7f00 100%);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+/* ====== En-tête ====== */
+header{ text-align:center; margin-top:2rem; }
+header h1{ margin:0; font-size:2.6rem; }
+header h2{ margin:.4rem 0 0; font-size:1.5rem; font-weight:600; }
+header h3{ margin:.2rem 0 1.2rem; font-size:1.2rem; font-weight:400; }
+
+/* ====== Zone centrale ====== */
+main{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.center{
+  position:relative;
+  width:min(920px, 92vw);
+  height:560px; /* un peu de marge pour éviter chevauchements */
+}
+
+/* Photo centrale (temporaire: SVG transparent) */
+.photo{
+  position:absolute;
+  top:50%; left:50%;
+  width:130px; height:130px;
+  border-radius:50%;
+  border:2px solid #fff;
+  background: transparent;
+  transform:translate(-50%, -50%);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+  z-index:2;
+}
+.photo img{
+  width:84%;
+  height:auto;
+  display:block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+}
+
+/* ====== Rangée de logos (en haut à droite) ====== */
 .logos{
   position:absolute;
   top:6%;
@@ -6,7 +61,7 @@
   display:flex;
   gap:14px;
   align-items:center;
-  z-index:3;            /* passer au-dessus des lignes si besoin */
+  z-index:3;
 }
 .logos img{
   width:34px;
@@ -21,7 +76,93 @@
   opacity:1;
 }
 
-/* Si les logos chevauchent r1/r2, baisse un peu la rangée: */
+/* ====== Rayons + labels ====== */
+.line{
+  position:absolute;
+  height:0;             /* ligne horizontale */
+  z-index:1;
+}
+.line::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0; right:0;
+  height:2px;
+  background:#fff;
+  transform: translateY(-50%);
+}
+.line a{
+  position:absolute;
+  top:0;
+  text-decoration:none;
+  color:#fff;
+  font-size:1rem;
+  line-height:1;
+  padding:.25rem .4rem;
+  transition: transform .18s ease, filter .18s ease;
+  white-space:nowrap;
+}
+.line a:hover{ transform: translate(var(--tx,0), -50%) scale(1.12); }
+
+/* Côté gauche: s'étend vers la gauche depuis le centre; label à GAUCHE du rayon */
+.left{
+  right:50%;
+  width:var(--line);
+}
+.left a{
+  left:0;
+  transform: translate(-105%, -50%);
+  --tx: -105%;
+}
+
+/* Côté droit: s'étend vers la droite depuis le centre; label à DROITE du rayon */
+.right{
+  left:50%;
+  width:var(--line);
+}
+.right a{
+  right:0;
+  transform: translate(105%, -50%);
+  --tx: 105%;
+}
+
+/* Positions verticales (ajuste librement ces % si besoin) */
+.l1{ top:14%; } .l2{ top:30%; } .l3{ top:56%; } .l4{ top:74%; }
+.r1{ top:18%; } .r2{ top:36%; } .r3{ top:60%; } .r4{ top:78%; }
+
+/* ====== Pied (barre contact alignée) ====== */
+footer{
+  text-align:center;
+  padding: .8rem 0 1rem;
+  font-size: .95rem;
+}
+.contact-bar{
+  display:flex;
+  gap: .8rem;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom: .6rem;
+}
+.contact-bar a{
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px dashed rgba(255,255,255,.6);
+}
+.contact-bar a:hover{ filter: brightness(1.08); }
+.sep{ opacity:.7 }
+
+/* ====== Responsive ====== */
 @media (max-width: 700px){
+  :root{ --line: 34vw; }
+  header h1{ font-size:2.1rem; }
+  .center{ height:540px; }
+  .photo{ width:100px; height:100px; }
   .logos{ top:9%; }
+  .line a{ font-size:.95rem; }
+}
+@media (max-width: 420px){
+  :root{ --line: 38vw; }
+  .center{ height:560px; }
+  .line a{ font-size:.9rem; }
 }
