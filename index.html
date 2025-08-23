@@ -1,0 +1,66 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mon Portfolio – Prénom Nom</title>
+  <meta name="description" content="Portfolio de projets – développeur·se web. HTML/CSS, JavaScript, et plus." />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Accueil">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Prénom Nom</span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Contenu identique : sections hero, projets, à propos, contact -->
+    <!-- ... (même structure que précédemment) ... -->
+  </main>
+
+  <footer class="container">
+    © <span id="year"></span> Prénom Nom — Tous droits réservés.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+/* style.css */
+:root{
+  --bg: #0f1221;
+  --card: #15193a;
+  --text: #e8eaf6;
+  --muted: #b7bee5;
+  --acc: #8aa2ff;
+  --acc-2: #6cf0e6;
+  --ring: rgba(138,162,255,.45);
+  --shadow: 0 10px 25px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.25);
+  --radius: 20px;
+  --pad: 1rem;
+  --max: 1120px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, #25306f 0, transparent 60%),
+                     radial-gradient(1200px 800px at 110% 10%, #1b5b6e 0, transparent 60%),
+                     var(--bg);
+}
+/* ... tout le CSS du modèle précédent, inchangé ... */
