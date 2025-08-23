@@ -34,23 +34,25 @@ main{
 }
 
 /* Photo centrale (cercle) */
-.photo{
-  position:absolute;
-  top:50%; left:50%;
-  width:130px; height:130px;
-  border-radius:50%;
-  border:2px solid #fff;
-  background: transparent;
-  transform:translate(-50%, -50%);
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden;
-  z-index:2;
+.photo {
+  width: 200px; /* plus grand qu'avant (ex: 130px) */
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
-.photo img{
-  width:auto;          /* conserve les proportions */
-  height:84%;         /* occupe majoritairement le cercle */
-  display:block;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+
+.photo img {
+  width: auto;
+  height: 90%; /* occupe presque tout le cercle */
+  display: block;
 }
 
 /* ====== Rangée de logos (en haut à droite) ====== */
