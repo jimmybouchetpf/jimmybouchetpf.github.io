@@ -1,0 +1,63 @@
+/* ====== Base ====== */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Noto Sans", Arial, sans-serif;
+  background: #fff;         /* fond blanc */
+  color: #222;              /* texte foncé */
+  line-height: 1.5;
+}
+
+/* ====== En-tête ====== */
+header {
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #000;
+}
+header h2 {
+  margin: 0.5rem 0 0;
+  font-size: 1.3rem;
+  color: #555;
+}
+
+/* ====== Contenu principal ====== */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+main h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: #333;
+}
+main p {
+  margin: 0.5rem 0;
+}
+
+/* ====== Liens ====== */
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Pied de page ====== */
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+}
+
